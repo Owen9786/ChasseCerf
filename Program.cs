@@ -17,5 +17,31 @@ class Program
           sans consommer de flèche.
         - Afficher le bilan final de la chasse.
         */
+        int flèches = 5;
+        int tirsRéussis = 0;
+
+        while (flèches > 0 && tirsRéussis < 3)
+        {
+            Console.WriteLine("Le tir touche-t-il la cible ? (touché/raté) : ");
+            string réponse = Console.ReadLine();
+
+            if (réponse == "touché")
+            {
+                tirsRéussis++;
+                flèches--;
+                Console.WriteLine("Bien joué ! Vous avez touché la cible.");
+            }
+            else if (réponse == "raté")
+            {
+                flèches--;
+                Console.WriteLine("Le tir a raté la cible.");
+            }
+            else
+            {
+                Console.WriteLine("Veuillez répondre par 'touché' ou 'raté'.");
+            }
+        }
+
+        Console.WriteLine($"Bilan de chasse. Tirs réussis : {tirsRéussis} \nFlèches restantes : {flèches} \n résultat : {'Chasse réussie' if tirsRéussis >= 3 else 'Chasse échouée'}");
     }
 }
