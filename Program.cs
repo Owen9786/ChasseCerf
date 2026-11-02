@@ -42,6 +42,14 @@ class Program
             }
         }
 
-        Console.WriteLine($"Bilan de chasse. Tirs réussis : {tirsRéussis} \nFlèches restantes : {flèches} \n résultat : {'Chasse réussie' if tirsRéussis >= 3 else 'Chasse échouée'}");
+        Console.WriteLine($"Bilan de chasse. Tirs réussis : {tirsRéussis} \nFlèches restantes : {flèches}");
+        if (tirsRéussis >= 3)
+        {
+            Console.WriteLine("Chasse réussie !");
+        }
+        else
+        {
+            Console.WriteLine("Chasse échouée.");
+        }
     }
 }
